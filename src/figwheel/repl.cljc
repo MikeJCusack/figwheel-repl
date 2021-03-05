@@ -615,7 +615,7 @@
 (defn set-log-level [logger' level]
   (if-let [lvl (get log-levels level)]
     (do
-      (.setLevel logger' lvl)
+      (glog/setLevel logger' lvl)
       (debug (str "setting log level to " level)))
     (glog/warning logger'
                   (str "Log level " (pr-str level) " doesn't exist must be one of "
